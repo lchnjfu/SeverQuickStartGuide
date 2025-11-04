@@ -203,6 +203,21 @@ scp zhangsan@192.168.1.100:/home/zhangsan/output.log ./
 ```
 
 ---
+## cuda版本更换
+
+目前系统默认cuda版本是12.2，已安装12.8，如需要更换至，请按照如下步骤操作：
+1、在`～/.bashrc`末尾添加如下三行，并保存退出（建议用vim）：
+```shell
+export CUDA_HOME=/usr/local/cuda-12.8
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+```
+2.更新`～/.bashrc`并检验：
+```shell
+source ~/.bashrc
+nvcc -V          # 看是否能找到编译器（可选）
+echo $CUDA_HOME  # 看路径是否设置正确
+```
 
 ## ❓ 遇到问题怎么办？
 
