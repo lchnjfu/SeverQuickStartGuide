@@ -51,17 +51,6 @@ passwd
 
 ---
 
-## 📜 **核心使用准则 (必须遵守)**
-
-为了保证大家都能高效地使用服务器，请务必遵守以下黄金准则：
-
-1.  **先看后用 (Check First)**: 在运行任何代码前，必须使用 `nvidia-smi` 命令查看GPU状态，选择一个空闲的GPU。
-2.  **明确指定 (Be Specific)**: **严禁**让程序自动选择GPU。你**必须**使用 `CUDA_VISIBLE_DEVICES` 环境变量来指定你要使用的GPU。
-3.  **环境隔离 (Isolate Your Environment)**: **严禁**在系统的全局Python环境中安装包。**必须**使用 `Conda` 或 `venv` 创建独立的虚拟环境。
-4.  **及时清理 (Clean Up)**: 调试或短时间占用GPU后，请确保你的进程已结束，释放GPU资源。不要长时间占用GPU而不进行计算。
-
----
-
 ## 💻 环境管理：使用Conda
 
 我们使用 [Miniconda](https://docs.conda.io/en/latest/miniconda.html) 来管理每个人的开发环境，以避免软件包依赖冲突。
